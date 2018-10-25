@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import *
+from selenium import webdriver
 import time
 
 class SeleniumUtil():
@@ -117,3 +118,6 @@ class SeleniumUtil():
                 self.driver.switch_to_window(TabOrWindow)
                 print("Siwtched to open " + TabOrWindow)
 
+
+    def tearDown(self):
+        self.driver.quit()

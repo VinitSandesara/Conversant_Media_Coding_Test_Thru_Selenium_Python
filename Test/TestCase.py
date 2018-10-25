@@ -1,5 +1,4 @@
 
-
 from selenium import webdriver
 
 from Test.BaseDriver import BaseDriver
@@ -8,11 +7,11 @@ from Test.SeleniumUtil import SeleniumUtil
 
 
 class TestCase():
-    driver = BaseDriver().getDriverBasedOnBrowser("chrome")
+    driver = BaseDriver().getDriverBasedOnBrowser("firefox")
     driver.get("https://www.conversantmedia.com/")
 
     # Click the Careers button.
-    SeleniumUtil(driver).elementClick(Locators().Careers_Link,"xpath")
+    SeleniumUtil(driver).elementClick(Locators().Careers_Link ,"xpath")
 
     # Click the Join our team button.
     SeleniumUtil(driver).elementClick(Locators().Join_Our_Team_Link)
@@ -31,3 +30,6 @@ class TestCase():
 
     # Click the requisition title: Senior QA Engineer, Automation
     SeleniumUtil(driver).elementClick(Locators().Search_Result_Selection, "link")
+
+    # Quit the browser
+    SeleniumUtil(driver).tearDown()
